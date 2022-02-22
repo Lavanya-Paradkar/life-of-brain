@@ -16,7 +16,7 @@ const Footer = () => {
                     className=""
                 />
             </div>
-            <div className='flex flex-col flex-1'>
+            <div className='flex flex-col flex-1 mr-2'>
                 <div className='font-semibold text-xl text-lob_text-peach'>
                     Support
                 </div>
