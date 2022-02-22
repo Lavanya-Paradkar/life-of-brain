@@ -6,7 +6,7 @@ const Footer = () => {
   var currentyear = currentTime.getFullYear()
   return (
     <div className='flex flex-col'>
-        <div className='bg-white p-16 flex'>
+        <div className='bg-gray-50 p-16 flex'>
             <div className='hidden md:flex flex-grow'>
                 <Image
                     src="/logo_text.png"
@@ -39,7 +39,7 @@ const Footer = () => {
             </div>
             <div className='flex flex-1 flex-col'>
                 <div className='font-semibold text-xl text-lob_text-peach'>
-                    Social Media
+                    Join us
                 </div>
                 <div className='mt-6 flex flex-col md:flex-row'>
                     <div className='mb-2 mr-4 cursor-pointer hover:shadow-xl'>

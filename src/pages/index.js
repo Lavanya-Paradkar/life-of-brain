@@ -7,6 +7,7 @@ import Homepage from "../components/Homepage/Homepage";
 import MobileMenu from "../components/Homepage/MobileMenu";
 import Process from "../components/Homepage/Process";
 import { signIn, signOut, useSession } from "next-auth/react";
+import Ytb from "../components/Ytb/Ytb";
 
 export default function Home() {
 
@@ -32,6 +33,7 @@ export default function Home() {
         <Homepage/>
         <Facts/>
         <Process/>
+        <Ytb/>
         <Footer/>
       </main>
 
