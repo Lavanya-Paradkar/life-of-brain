@@ -4,6 +4,7 @@ import { useState } from "react";
 import Header from "../components/Header/Header";
 import MobileMenu from "../components/Homepage/MobileMenu";
 import { signIn, signOut, useSession } from "next-auth/react";
+import Doctor from '../components/Doctor/Doctor';
 
 const Doctors = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -23,8 +24,8 @@ const Doctors = () => {
       </div>
 
 
-      <main className="mx-auto">
-    
+      <main className="mx-auto flex items-center justify-center">
+        <Doctor/>
       </main>
     </div>
   )

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Header from "../components/Header/Header";
 import MobileMenu from "../components/Homepage/MobileMenu";
 import { signIn, signOut, useSession } from "next-auth/react";
+import Quiz from '../components/Quiz/Quiz';
 
 const Assess = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -24,7 +25,7 @@ const Assess = () => {
 
 
       <main className="mx-auto">
-    
+        <Quiz/>
       </main>
     </div>
   )
