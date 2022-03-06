@@ -19,6 +19,7 @@ const Header = ({menuOpen, setMenuOpen, session, signIn, signOut}) => {
                     src="/lob_blogo.png"
                     width={220}
                     height={50}
+                    loading="eager"
                     objectFit="contain"
                     className="cursor-pointer"
                 />
@@ -43,10 +44,11 @@ const Header = ({menuOpen, setMenuOpen, session, signIn, signOut}) => {
                     {/* <p>Doctors</p> */}
                     <div className="flex flex-col items-center transform hover:scale-110">
                         {/* <PlusSmIcon className="h-8 w-8 font-extrabold text-red-600"/> */}
-                        <img
+                        <Image
                             src="/doctorv.webp"
                             width={30}
                             height={32}
+                            loading="eager"
                             objectFit="contain"
                             className="cursor-pointer mb-1"
                         />
@@ -78,7 +80,7 @@ const Header = ({menuOpen, setMenuOpen, session, signIn, signOut}) => {
                             src={session.user.image}
                             width={40}
                             height={40}
-                            className='rounded-full shadow-xl'
+                            className='rounded-full'
                         /> }
                     </div>
                     }

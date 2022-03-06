@@ -13,6 +13,7 @@ const Facts = () => {
                         src="/card_stress.webp"
                         width={255}
                         height={170}
+                        loading='eager'
                         objectFit="contain"
                         className="rounded-xl"
                     />
@@ -32,6 +33,7 @@ const Facts = () => {
                         src="/card_dep.webp"
                         width={255}
                         height={170}
+                        loading='eager'
                         objectFit="contain"
                         className="rounded-xl"
                     />
@@ -51,6 +53,7 @@ const Facts = () => {
                         src="/card_report.webp"
                         width={255}
                         height={170}
+                        loading='eager'
                         objectFit="contain"
                         className="rounded-xl"
                     />
@@ -70,6 +73,7 @@ const Facts = () => {
                         src="/card_treat.webp"
                         width={255}
                         height={170}
+                        loading='eager'
                         objectFit="contain"
                         className="rounded-xl"
                     />

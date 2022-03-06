@@ -7,9 +7,10 @@ export default function SignIn({ providers }) {
         <div>
             <Image
                    
-                src="/logoposter.png"
+                src="/lob_icon.png"
                 width={180}
                 height={180}
+                loading="eager"
                 objectFit="contain"
                 className=""
             />
