@@ -5,7 +5,6 @@ import Header from "../components/Header/Header";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Quiz from '../components/Quiz/Quiz';
 import Menu from '../components/Homepage/Menu';
-import MobileOptions from '../components/Header/MobileOptions';
 
 const Assess = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -27,7 +26,6 @@ const Assess = () => {
 
       <main className="mx-auto">
         <Quiz/>
-        <MobileOptions/>
       </main>
     </div>
   )

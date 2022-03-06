@@ -6,7 +6,7 @@ const MobileOptions = () => {
 
     const router = useRouter();
   return (
-    <div className='md:hidden flex items-center justify-evenly h-20 w-full bg-white fixed bottom-0'>
+    <div className='md:hidden flex items-center justify-evenly h-16 w-full bg-white fixed bottom-0'>
         {/* Assess */}
         <div onClick={()=> router.push('/assess')} className="flex text-lob_text text-xl font-semibold cursor-pointer">
             <div className="flex flex-col items-center transform hover:scale-110">
