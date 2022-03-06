@@ -92,7 +92,7 @@ const Footer = () => {
         </div>
 
         {/* Footer Rights */}
-        <div className='bg-gray-100 py-4 text-sm flex justify-center items-center'>
+        <div className='bg-gray-100 py-4 text-sm mb-20 md:mb-0 flex justify-center items-center'>
             <p>© {currentyear} Life Of Brain | <span className='text-xs hover:underline cursor-pointer'>Terms & Conditions</span></p>
         </div>
     </div>

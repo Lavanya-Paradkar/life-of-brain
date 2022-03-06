@@ -4,10 +4,11 @@ import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import Facts from "../components/Homepage/Facts";
 import Homepage from "../components/Homepage/Homepage";
-import MobileMenu from "../components/Homepage/MobileMenu";
 import Process from "../components/Homepage/Process";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Ytb from "../components/Ytb/Ytb";
+import MobileOptions from "../components/Header/MobileOptions";
+import Menu from "../components/Homepage/Menu";
 
 export default function Home() {
 
@@ -25,7 +26,7 @@ export default function Home() {
         <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} session={session} signIn={signIn} signOut={signOut} />
       </div>
       <div className="">
-        {menuOpen && <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} session={session} signIn={signIn} signOut={signOut}/>}
+        {menuOpen && <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} session={session} signIn={signIn} signOut={signOut}/>}
       </div>
 
 
@@ -35,6 +36,7 @@ export default function Home() {
         <Process/>
         <Ytb/>
         <Footer/>
+        <MobileOptions/>
       </main>
 
     </div>

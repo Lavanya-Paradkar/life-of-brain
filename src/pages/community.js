@@ -2,8 +2,8 @@ import React from 'react';
 import Head from "next/head";
 import { useState } from "react";
 import Header from "../components/Header/Header";
-import MobileMenu from "../components/Homepage/MobileMenu";
 import { signIn, signOut, useSession } from "next-auth/react";
+import Menu from '../components/Homepage/Menu';
 
 const Community = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -19,7 +19,7 @@ const Community = () => {
         <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} session={session} signIn={signIn} signOut={signOut} />
       </div>
       <div className="">
-        {menuOpen && <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} session={session} signIn={signIn} signOut={signOut}/>}
+        {menuOpen && <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} session={session} signIn={signIn} signOut={signOut}/>}
       </div>
 
 

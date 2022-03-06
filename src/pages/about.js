@@ -2,8 +2,9 @@ import React from 'react';
 import Head from "next/head";
 import { useState } from "react";
 import Header from "../components/Header/Header";
-import MobileMenu from "../components/Homepage/MobileMenu";
 import { signIn, signOut, useSession } from "next-auth/react";
+import Menu from '../components/Homepage/Menu';
+import MobileOptions from '../components/Header/MobileOptions';
 
 const About = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -19,12 +20,12 @@ const About = () => {
         <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} session={session} signIn={signIn} signOut={signOut} />
       </div>
       <div className="">
-        {menuOpen && <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} session={session} signIn={signIn} signOut={signOut}/>}
+        {menuOpen && <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} session={session} signIn={signIn} signOut={signOut}/>}
       </div>
 
 
       <main className="mx-auto">
-    
+        <MobileOptions/>
       </main>
     </div>
   )

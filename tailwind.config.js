@@ -15,6 +15,7 @@ module.exports = {
         peachpuff: "#FFDAB9",
         peachlight:"#FFE5B4",
         papayalight:"#FAF7F0",
+        wood:'#A0522D',
       },
       spacing: {
         '128': '32rem', // standard of 128 / 4 = 32

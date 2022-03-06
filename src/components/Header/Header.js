@@ -1,7 +1,8 @@
 import Image from "next/image";
-import {AtSymbolIcon, EmojiHappyIcon, MenuIcon, UserCircleIcon, UserIcon} from "@heroicons/react/outline";
+import {AtSymbolIcon, ChartSquareBarIcon, EmojiHappyIcon, MenuIcon, PlayIcon, UserCircleIcon, UserGroupIcon, UserIcon} from "@heroicons/react/outline";
 import { useState } from "react";
 import { useRouter } from 'next/router';
+import {PlusSmIcon} from "@heroicons/react/solid";
 
 
 const Header = ({menuOpen, setMenuOpen, session, signIn, signOut}) => {
@@ -25,40 +26,65 @@ const Header = ({menuOpen, setMenuOpen, session, signIn, signOut}) => {
             
             {/* tabs desktop*/}
             <div className="flex items-center">
-                {/* Cure */}
-                <div onClick={()=> router.push('/about')} className="hidden md:flex text-lob_text text-xl font-semibold px-4 hover:text-lob_text-peach cursor-pointer">
-                    <p>About</p>
-                </div>
-                {/* Know Yourself */}
-                <div onClick={()=> router.push('/assess')} className="hidden md:flex text-lob_text text-xl font-semibold px-4 hover:text-lob_text-peach cursor-pointer">
-                    <p>Assess</p>
-                </div>
-                {/* Community */}
-                <div onClick={()=> router.push('https://join.slack.com/t/lifeofbrain/shared_invite/zt-149t385io-2sd7l~kU5RouUl2OFrT5Dw')} className="hidden md:flex text-lob_text text-xl font-semibold px-4 hover:text-lob_text-peach cursor-pointer">
-                    <p>Community</p>
+                
+                {/* Assess */}
+                <div onClick={()=> router.push('/assess')} className="hidden md:flex text-lob_text text-xl font-semibold px-6 cursor-pointer">
+                    <div className="flex flex-col items-center transform hover:scale-110">
+                        <ChartSquareBarIcon className="h-8 w-8 text-lob_text"/>
+                        <p className="text-xs">Assess</p>
+                        <div className="absolute top-0 right-0">
+                            <span class="animate-ping absolute inline-flex h-4 w-4 -top-0.5 rounded-full bg-blue-500 opacity-50"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 -top-2.5 opacity-75 bg-blue-600"></span>
+                        </div>
+                    </div>
                 </div>
                 {/* Doctors */}
-                <div onClick={()=> router.push('/doctors')} className="hidden md:flex text-lob_text text-xl font-semibold px-4 hover:text-lob_text-peach cursor-pointer">
-                    <p>Doctors</p>
+                <div onClick={()=> router.push('/doctors')} className="hidden md:flex text-lob_text text-xl font-semibold px-6 cursor-pointer">
+                    {/* <p>Doctors</p> */}
+                    <div className="flex flex-col items-center transform hover:scale-110">
+                        {/* <PlusSmIcon className="h-8 w-8 font-extrabold text-red-600"/> */}
+                        <img
+                            src="/doctorv.webp"
+                            width={30}
+                            height={32}
+                            objectFit="contain"
+                            className="cursor-pointer mb-1"
+                        />
+                        <p className="text-xs">Doctors</p>
+                    </div>
+                </div>
+                {/* Community */}
+                <div onClick={()=> router.push('https://join.slack.com/t/lifeofbrain/shared_invite/zt-149t385io-2sd7l~kU5RouUl2OFrT5Dw')} className="hidden md:flex text-lob_text text-xl font-semibold px-6 cursor-pointer">
+                    {/* <p>Community</p> */}
+                    <div className="flex flex-col items-center transform hover:scale-110">
+                        <UserGroupIcon className="h-8 w-8 text-lob_text"/>
+                        <p className="text-xs">Community</p>
+                    </div>
+                </div>
+                {/* Youtube */}
+                <div onClick={()=> router.push('https://www.youtube.com/channel/UCBxMp9UHmIW0fa4igpSUuXw')} className="hidden md:flex text-lob_text text-xl font-semibold px-6 cursor-pointer">
+                    {/* <p>Community</p> */}
+                    <div className="flex flex-col items-center transform hover:scale-110">
+                        <PlayIcon className="h-8 w-8 text-lob_text"/>
+                        <p className="text-xs">Revive</p>
+                    </div>
                 </div>
                 {/* SignIn */}
-                <div onClick={!session ? signIn : signOut} className={!session ? "hidden md:flex bg-lob_text text-xl text-white px-4 w-auto mx-4 py-1 justify-center items-center font-semibold rounded-full hover:bg-green-600 cursor-pointer"  :   "hidden md:flex text-lg pl-2 pr-4 w-auto mx-4 py-1 justify-center items-center font-semibold rounded-full border border-lob_text text-lob_text hover:shadow-2xl cursor-pointer"}>
+                <div onClick={!session ? signIn : ()=>setMenuOpen(!menuOpen)} className={!session ? "flex bg-blue-500 text-md md:text-lg text-white px-3 w-auto mx-1 md:mx-4 py-1 justify-center items-center font-semibold rounded-lg hover:bg-blue-600 cursor-pointer"  :   "flex text-lg w-auto mx-1 md:mx-4 justify-center items-center font-semibold rounded-full text-lob_text cursor-pointer"}>
                     {session &&
-                    <div className="mr-1 flex rounded-full items-center text-lob_text">
-                        <UserCircleIcon className="w-8 h-8 p-1 font-extralight"/>
+                    <div className="flex rounded-full items-center text-lob_text">
+                        {!session?.user?.image ? <UserCircleIcon className="w-8 h-8 font-extralight"/> : 
+                        <img
+                            src={session.user.image}
+                            width={40}
+                            height={40}
+                            className='rounded-full shadow-xl'
+                        /> }
                     </div>
                     }
                     <p>
-                        {session ? `${session.user.name}`: `Sign In`}
+                        {session ? ``: `Sign In`}
                     </p>
-                </div>
-                <div className="flex md:hidden items-center text-white px-1 rounded-xl cursor-pointer" onClick={()=>setMenuOpen(!menuOpen)}>
-                    {session &&
-                        <div className="flex rounded-full items-center text-lob_text">
-                            <UserCircleIcon className="w-10 h-10 p-1 font-extralight"/>
-                        </div>
-                    }
-                    <MenuIcon className="h-12 p-2 text-lob_text"/>
                 </div>
             </div>
         </div> 
