@@ -4,11 +4,11 @@ export const quizData = [
       question: "How often do you feel sad?",
       answers: [
         {
-          text: "I do not feel sad",
+          text: "I usually do not feel sad",
           value: 0,
         },
         {
-          text: "I feel sad sometimes",
+          text: "I feel sad more than I used to",
           value: 1,
         },
         {
@@ -21,56 +21,56 @@ export const quizData = [
         },
       ],
     },
+    // {
+    //   id: 2,
+    //   question: "Are you discouraged about the future?",
+    //   answers: [
+    //     {
+    //       text: "I am not discouraged about the future",
+    //       value: 0,
+    //     },
+    //     {
+    //       text: "I feel discouraged about the future",
+    //       value: 1,
+    //     },
+    //     {
+    //       text: "I feel I have nothing to look forward to",
+    //       value: 2,
+    //     },
+    //     {
+    //       text: "I feel the future is hopeless and that things cannot improve",
+    //       value: 3,
+    //     },
+    //   ],
+    // },
+    // {
+    //   id: 3,
+    //   question: "Do you feel as if you are a failure?",
+    //   answers: [
+    //     {
+    //       text: "I do not feel like a failure",
+    //       value: 0,
+    //     },
+    //     {
+    //       text: "I feel I have failed more than the average person",
+    //       value: 1,
+    //     },
+    //     {
+    //       text: "As I look back on my life, all I can see is a lot of failures",
+    //       value: 2,
+    //     },
+    //     {
+    //       text: "I feel I am a complete failure as a person",
+    //       value: 3,
+    //     },
+    //   ],
+    // },
     {
-      id: 2,
-      question: "Are you discouraged about the future?",
-      answers: [
-        {
-          text: "I am not discouraged about the future",
-          value: 0,
-        },
-        {
-          text: "I feel discouraged about the future",
-          value: 1,
-        },
-        {
-          text: "I feel I have nothing to look forward to",
-          value: 2,
-        },
-        {
-          text: "I feel the future is hopeless and that things cannot improve",
-          value: 3,
-        },
-      ],
-    },
-    {
-      id: 3,
-      question: "Do you feel as if you are a failure?",
-      answers: [
-        {
-          text: "I do not feel like a failure",
-          value: 0,
-        },
-        {
-          text: "I feel I have failed more than the average person",
-          value: 1,
-        },
-        {
-          text: "As I look back on my life, all I can see is a lot of failures",
-          value: 2,
-        },
-        {
-          text: "I feel I am a complete failure as a person",
-          value: 3,
-        },
-      ],
-    },
-    {
-        id: 4,
+        id: 2,
         question: "How satisfied are you in life?",
         answers: [
           {
-            text: "I get as much satisfaction out of things as I used to",
+            text: "I am satisfied with my life",
             value: 0,
           },
           {
@@ -87,75 +87,75 @@ export const quizData = [
           },
         ],
       },
+      // {
+      //   id: 5,
+      //   question: "How often do you feel guilty?",
+      //   answers: [
+      //     {
+      //       text: "I don't feel guilty at all",
+      //       value: 0,
+      //     },
+      //     {
+      //       text: "I feel guilty a good part of the time",
+      //       value: 1,
+      //     },
+      //     {
+      //       text: "I feel quite guilty most of the time",
+      //       value: 2,
+      //     },
+      //     {
+      //       text: "I feel guilty all of the time",
+      //       value: 3,
+      //     },
+      //   ],
+      // },
+      // {
+      //   id: 6,
+      //   question: "Do you feel as if you are being punished for something?",
+      //   answers: [
+      //     {
+      //       text: "I don't feel I am being punished",
+      //       value: 0,
+      //     },
+      //     {
+      //       text: "I feel I might punished",
+      //       value: 1,
+      //     },
+      //     {
+      //       text: "I expect to be punished",
+      //       value: 2,
+      //     },
+      //     {
+      //       text: "I feel I am being punished",
+      //       value: 3,
+      //     },
+      //   ],
+      // },
+      // {
+      //   id: 7,
+      //   question: "What do you feel about yourself?",
+      //   answers: [
+      //     {
+      //       text: "I don't feel disappointed in myself",
+      //       value: 0,
+      //     },
+      //     {
+      //       text: "I am disappointed in myself",
+      //       value: 1,
+      //     },
+      //     {
+      //       text: "I am disgusted with myself",
+      //       value: 2,
+      //     },
+      //     {
+      //       text: "I hate myself",
+      //       value: 3,
+      //     },
+      //   ],
+      // },
       {
-        id: 5,
-        question: "How often do you feel guilty?",
-        answers: [
-          {
-            text: "I don't feel guilty at all",
-            value: 0,
-          },
-          {
-            text: "I feel guilty a good part of the time",
-            value: 1,
-          },
-          {
-            text: "I feel quite guilty most of the time",
-            value: 2,
-          },
-          {
-            text: "I feel guilty all of the time",
-            value: 3,
-          },
-        ],
-      },
-      {
-        id: 6,
-        question: "Do you feel as if you are being punished for something?",
-        answers: [
-          {
-            text: "I don't feel I am being punished",
-            value: 0,
-          },
-          {
-            text: "I feel I might punished",
-            value: 1,
-          },
-          {
-            text: "I expect to be punished",
-            value: 2,
-          },
-          {
-            text: "I feel I am being punished",
-            value: 3,
-          },
-        ],
-      },
-      {
-        id: 7,
+        id: 3,
         question: "What do you feel about yourself?",
-        answers: [
-          {
-            text: "I don't feel disappointed in myself",
-            value: 0,
-          },
-          {
-            text: "I am disappointed in myself",
-            value: 1,
-          },
-          {
-            text: "I am disgusted with myself",
-            value: 2,
-          },
-          {
-            text: "I hate myself",
-            value: 3,
-          },
-        ],
-      },
-      {
-        id: 8,
-        question: "What is your self-image?",
         answers: [
           {
             text: "I don't feel I am any worse than anybody else",
@@ -170,35 +170,35 @@ export const quizData = [
             value: 2,
           },
           {
-            text: "I blame myself for everything bad that happens",
+            text: "I am disappointed in myself",
             value: 3,
           },
         ],
       },
+      // {
+      //   id: 9,
+      //   question: "Do you ever think of ending your life?",
+      //   answers: [
+      //     {
+      //       text: "I don't have any thoughts of killing myself",
+      //       value: 0,
+      //     },
+      //     {
+      //       text: "I have thoughts of killing myself, but I would not carry them out",
+      //       value: 1,
+      //     },
+      //     {
+      //       text: "I feel like killing myself",
+      //       value: 2,
+      //     },
+      //     {
+      //       text: "I would kill myself if I had the chance",
+      //       value: 3,
+      //     },
+      //   ],
+      // },
       {
-        id: 9,
-        question: "Do you ever think of ending your life?",
-        answers: [
-          {
-            text: "I don't have any thoughts of killing myself",
-            value: 0,
-          },
-          {
-            text: "I have thoughts of killing myself, but I would not carry them out",
-            value: 1,
-          },
-          {
-            text: "I feel like killing myself",
-            value: 2,
-          },
-          {
-            text: "I would kill myself if I had the chance",
-            value: 3,
-          },
-        ],
-      },
-      {
-        id: 10,
+        id: 4,
         question: "How often do you feel like crying?",
         answers: [
           {
@@ -220,7 +220,7 @@ export const quizData = [
         ],
       },
       {
-        id: 11,
+        id: 5,
         question: "How often do you get irritated?",
         answers: [
           {
@@ -242,7 +242,7 @@ export const quizData = [
         ],
       },
       {
-        id: 12,
+        id: 6,
         question: "How is your social life?",
         answers: [
           {
@@ -264,7 +264,7 @@ export const quizData = [
         ],
       },
       {
-        id: 13,
+        id: 7,
         question: "Do you feel any hesitation before taking decisions?",
         answers: [
           {
@@ -286,7 +286,7 @@ export const quizData = [
         ],
       },
       {
-        id: 14,
+        id: 8,
         question: "What do you feel about your physical appearance?",
         answers: [
           {
@@ -307,52 +307,52 @@ export const quizData = [
           },
         ],
       },
+      // {
+      //   id: 9,
+      //   question: "Your work efficiency?",
+      //   answers: [
+      //     {
+      //       text: "I can work about as well as before",
+      //       value: 0,
+      //     },
+      //     {
+      //       text: "It takes an extra effort to get started at doing something",
+      //       value: 1,
+      //     },
+      //     {
+      //       text: "I have to push myself very hard to do anything",
+      //       value: 2,
+      //     },
+      //     {
+      //       text: "I can't do any work at all",
+      //       value: 3,
+      //     },
+      //   ],
+      // },
+      // {
+      //   id: 16,
+      //   question: "Do you sleep well these days?",
+      //   answers: [
+      //     {
+      //       text: "I can sleep as well as usual",
+      //       value: 0,
+      //     },
+      //     {
+      //       text: "I don't sleep as well as I used to",
+      //       value: 1,
+      //     },
+      //     {
+      //       text: "I wake up 1-2 hours earlier than usual and find it hard to get back to sleep",
+      //       value: 2,
+      //     },
+      //     {
+      //       text: "I wake up several hours earlier than I used to and cannot get back to sleep",
+      //       value: 3,
+      //     },
+      //   ],
+      // },
       {
-        id: 15,
-        question: "Your work efficiency?",
-        answers: [
-          {
-            text: "I can work about as well as before",
-            value: 0,
-          },
-          {
-            text: "It takes an extra effort to get started at doing something",
-            value: 1,
-          },
-          {
-            text: "I have to push myself very hard to do anything",
-            value: 2,
-          },
-          {
-            text: "I can't do any work at all",
-            value: 3,
-          },
-        ],
-      },
-      {
-        id: 16,
-        question: "Do you sleep well these days?",
-        answers: [
-          {
-            text: "I can sleep as well as usual",
-            value: 0,
-          },
-          {
-            text: "I don't sleep as well as I used to",
-            value: 1,
-          },
-          {
-            text: "I wake up 1-2 hours earlier than usual and find it hard to get back to sleep",
-            value: 2,
-          },
-          {
-            text: "I wake up several hours earlier than I used to and cannot get back to sleep",
-            value: 3,
-          },
-        ],
-      },
-      {
-        id: 17,
+        id: 9,
         question: "Do you feel tired?",
         answers: [
           {
@@ -373,90 +373,90 @@ export const quizData = [
           },
         ],
       },
+      // {
+      //   id: 18,
+      //   question: "What would you say about your appetite?",
+      //   answers: [
+      //     {
+      //       text: "My appetite is no worse than usual",
+      //       value: 0,
+      //     },
+      //     {
+      //       text: "My appetite is not as good as it used to be",
+      //       value: 1,
+      //     },
+      //     {
+      //       text: "My appetite is much worse now",
+      //       value: 2,
+      //     },
+      //     {
+      //       text: "I have no appetite at all anymore",
+      //       value: 3,
+      //     },
+      //   ],
+      // },
+      // {
+      //   id: 19,
+      //   question: "Have you lost weight recently (Not including exercises) ?",
+      //   answers: [
+      //     {
+      //       text: "I haven't lost much weight lately",
+      //       value: 0,
+      //     },
+      //     {
+      //       text: "I have lost more than five pounds (2 kgs)",
+      //       value: 1,
+      //     },
+      //     {
+      //       text: "I have lost more than ten pounds (5 kgs)",
+      //       value: 2,
+      //     },
+      //     {
+      //       text: "I have lost more than fifteen pounds (7 kgs)",
+      //       value: 3,
+      //     },
+      //   ],
+      // },
+      // {
+      //   id: 20,
+      //   question: "Are you worried for your health?",
+      //   answers: [
+      //     {
+      //       text: "I am no more worried about my health than usual",
+      //       value: 0,
+      //     },
+      //     {
+      //       text: "I am worried about physical problems like aches, pains or upset stomach",
+      //       value: 1,
+      //     },
+      //     {
+      //       text: "I am very worried about physical problems and it's hard to think of much else",
+      //       value: 2,
+      //     },
+      //     {
+      //       text: "I am worried about my physical problems all the time",
+      //       value: 3,
+      //     },
+      //   ],
+      // },
       {
-        id: 18,
-        question: "What would you say about your appetite?",
+        id: 10,
+        question: "What is your relationship status?",
         answers: [
           {
-            text: "My appetite is no worse than usual",
+            text: "I am in a happy relationship",
             value: 0,
           },
-          {
-            text: "My appetite is not as good as it used to be",
-            value: 1,
-          },
-          {
-            text: "My appetite is much worse now",
-            value: 2,
-          },
-          {
-            text: "I have no appetite at all anymore",
-            value: 3,
-          },
-        ],
-      },
-      {
-        id: 19,
-        question: "Have you lost weight recently (Not including exercises) ?",
-        answers: [
-          {
-            text: "I haven't lost much weight lately",
-            value: 0,
-          },
-          {
-            text: "I have lost more than five pounds (2 kgs)",
-            value: 1,
-          },
-          {
-            text: "I have lost more than ten pounds (5 kgs)",
-            value: 2,
-          },
-          {
-            text: "I have lost more than fifteen pounds (7 kgs)",
-            value: 3,
-          },
-        ],
-      },
-      {
-        id: 20,
-        question: "Are you worried for your health?",
-        answers: [
-          {
-            text: "I am no more worried about my health than usual",
-            value: 0,
-          },
-          {
-            text: "I am worried about physical problems like aches, pains or upset stomach",
-            value: 1,
-          },
-          {
-            text: "I am very worried about physical problems and it's hard to think of much else",
-            value: 2,
-          },
-          {
-            text: "I am worried about my physical problems all the time",
-            value: 3,
-          },
-        ],
-      },
-      {
-        id: 21,
-        question: "How do you feel about relationships?",
-        answers: [
           {
             text: "I do not feel any hesitation in getting into relationships",
-            value: 0,
+            value: 1,
           },
           {
-            text: "I am less interested in relationships than I used to be",
-            value: 1,
+            text: "I am in a complicated relationship with my partner",
+            value: 2,
           },
           {
             text: "I have almost no interest in relationships",
-            value: 2,
-          },
-          {
-            text: "I have had bad experiences, so not at all interested",
             value: 3,
           },
         ],

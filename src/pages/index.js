@@ -23,7 +23,7 @@ export default function Home() {
       </Head>
       
       <div className="sticky top-0 bg-white z-50">
-        <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} session={session} signIn={signIn} signOut={signOut} />
+        <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} signIn={signIn} signOut={signOut} />
       </div>
       <div className="">
         {menuOpen && <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} session={session} signIn={signIn} signOut={signOut}/>}

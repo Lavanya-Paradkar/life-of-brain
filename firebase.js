@@ -1,12 +1,28 @@
-import firebase from 'firebase';
+import { getApp, getApps, initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
+import { getStorage } from 'firebase/storage';
+import { getAnalytics } from "firebase/analytics";
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyBOtiLA3Egbcsxlo7eKA8xy7OjyGUUF-K8",
+    apiKey: process.env.FIREBASE_API,
     authDomain: "life-of-brain.firebaseapp.com",
     projectId: "life-of-brain",
     storageBucket: "life-of-brain.appspot.com",
-    messagingSenderId: "613166236767",
-    appId: "1:613166236767:web:e211d36269e11f2ee287ea",
-    measurementId: "G-NKFYGKP2PX"
+    messagingSenderId: process.env.FIREBASE_MSG,
+    appId: process.env.FIREBASE_APPID,
+    measurementId: process.env.FIREBASE_MID
   };
+
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();  
+const db = getFirestore();
+const storage = getStorage();
+// const analytics = () => {
+//   if (typeof window !== "undefined") {
+//     return getAnalytics()
+//   } else {
+//     return null
+//   }
+// }
+
+export { app, db, storage };

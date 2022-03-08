@@ -1,13 +1,42 @@
 import Image from "next/image";
-import {AtSymbolIcon, ChartSquareBarIcon, EmojiHappyIcon, MenuIcon, PlayIcon, UserCircleIcon, UserGroupIcon, UserIcon} from "@heroicons/react/outline";
-import { useState } from "react";
+import {ChartSquareBarIcon, PlayIcon, UserCircleIcon, UserGroupIcon } from "@heroicons/react/outline";
 import { useRouter } from 'next/router';
-import {PlusSmIcon} from "@heroicons/react/solid";
+import { useState } from 'react';
+import { addDoc, collection, doc, serverTimestamp, updateDoc } from "firebase/firestore";
+import { db, storage } from "../../../firebase";
+import { useSession } from "next-auth/react";
+import { getDownloadURL, ref, uploadString } from "firebase/storage";
+import { async } from "@firebase/util";
 
-
-const Header = ({menuOpen, setMenuOpen, session, signIn, signOut}) => {
+const Header = ({menuOpen, setMenuOpen, signIn, signOut}) => {
 
     const router = useRouter();
+    const [loading, setLoading] = useState();
+    const {data: session} = useSession();
+
+    const uploadPost = async () => {
+        if(loading) return;
+
+        setLoading(true);
+
+        const docRef = await addDoc(collection(db, 'users'), {
+            username: session.user.name,
+            email: session.user.email,
+            profileImg: session.user.image,
+            timeStamp: serverTimestamp()
+        })
+        
+        // const imageRef = ref(storage, `users/${docRef.id}/image`);
+
+        // await uploadString(imageRef, '/fb_icon.png', "data_url").then(async snapshot => {
+        //     const downloadUrl = await getDownloadURL(imageRef);
+        //     await updateDoc(doc(db, 'users', docRef.id), {
+        //         image: downloadUrl
+        //     })
+        // });
+
+        setLoading(false);
+    }
 
   return (
     <header>
@@ -74,7 +103,7 @@ const Header = ({menuOpen, setMenuOpen, session, signIn, signOut}) => {
                 {/* SignIn */}
                 <div onClick={!session ? signIn : ()=>setMenuOpen(!menuOpen)} className={!session ? "flex bg-blue-500 text-md md:text-lg text-white px-3 w-auto mx-1 md:mx-4 py-1 justify-center items-center font-semibold rounded-lg hover:bg-blue-600 cursor-pointer"  :   "flex text-lg w-auto mx-1 md:mx-4 justify-center items-center font-semibold rounded-full text-lob_text cursor-pointer"}>
                     {session &&
-                    <div className="flex rounded-full items-center text-lob_text">
+                    <div className="flex rounded-full items-center text-lob_text" onClick={uploadPost}>
                         {!session?.user?.image ? <UserCircleIcon className="w-8 h-8 font-extralight"/> : 
                         <img
                             src={session.user.image}
@@ -82,6 +111,7 @@ const Header = ({menuOpen, setMenuOpen, session, signIn, signOut}) => {
                             height={40}
                             className='rounded-full'
                         /> }
+                        {/* {session && loading && <div className="text-lg bg-red-500 text-white rounded-lg p-3">Uploading...</div>} */}
                     </div>
                     }
                     <p>

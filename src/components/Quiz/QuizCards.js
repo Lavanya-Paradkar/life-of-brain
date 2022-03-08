@@ -37,7 +37,7 @@ const QuizCards = ({quizData, setTimeOut, result, setResult, setStop, questionNu
         );
         delay(6000, () => {
             setQuestionNumber((prev) => prev + 1)
-            if(questionNumber === 21)
+            if(questionNumber === 10)
             {
                 setStop(true);
             }
