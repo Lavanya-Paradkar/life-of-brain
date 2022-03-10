@@ -1,7 +1,7 @@
 import Image from "next/image";
 import {ChartSquareBarIcon, PlayIcon, UserCircleIcon, UserGroupIcon } from "@heroicons/react/outline";
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { addDoc, collection, doc, serverTimestamp, updateDoc } from "firebase/firestore";
 import { db, storage } from "../../../firebase";
 import { useSession } from "next-auth/react";
@@ -13,6 +13,23 @@ const Header = ({menuOpen, setMenuOpen, signIn, signOut}) => {
     const router = useRouter();
     const [loading, setLoading] = useState();
     const {data: session} = useSession();
+
+    useEffect(async () => {
+
+        if (session) {
+            if(loading) return;
+
+            setLoading(true);
+
+            const docRef = await addDoc(collection(db, 'users'), {
+                username: session.user.name,
+                email: session.user.email,
+                profileImg: session.user.image,
+                timeStamp: serverTimestamp()
+            })
+        }
+    }, [session])
+    
 
     const uploadPost = async () => {
         if(loading) return;
@@ -81,7 +98,7 @@ const Header = ({menuOpen, setMenuOpen, signIn, signOut}) => {
                             objectFit="contain"
                             className="cursor-pointer mb-1"
                         />
-                        <p className="text-xs">Doctors</p>
+                        <p className="text-xs">Remedy</p>
                     </div>
                 </div>
                 {/* Community */}
@@ -103,7 +120,7 @@ const Header = ({menuOpen, setMenuOpen, signIn, signOut}) => {
                 {/* SignIn */}
                 <div onClick={!session ? signIn : ()=>setMenuOpen(!menuOpen)} className={!session ? "flex bg-blue-500 text-md md:text-lg text-white px-3 w-auto mx-1 md:mx-4 py-1 justify-center items-center font-semibold rounded-lg hover:bg-blue-600 cursor-pointer"  :   "flex text-lg w-auto mx-1 md:mx-4 justify-center items-center font-semibold rounded-full text-lob_text cursor-pointer"}>
                     {session &&
-                    <div className="flex rounded-full items-center text-lob_text" onClick={uploadPost}>
+                    <div className="flex rounded-full items-center text-lob_text">
                         {!session?.user?.image ? <UserCircleIcon className="w-8 h-8 font-extralight"/> : 
                         <img
                             src={session.user.image}

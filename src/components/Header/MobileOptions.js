@@ -30,7 +30,7 @@ const MobileOptions = () => {
                     objectFit="contain"
                     className="cursor-pointer mb-1"
                 />
-                <p className="text-xs">Doctors</p>
+                <p className="text-xs">Remedy</p>
             </div>
         </div>
         {/* Community */}

@@ -15,6 +15,7 @@ module.exports = {
         peachpuff: "#FFDAB9",
         peachlight:"#FFE5B4",
         papayalight:"#FAF7F0",
+        lightblue:"#4286CF",
         wood:'#A0522D',
       },
       spacing: {

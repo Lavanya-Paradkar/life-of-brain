@@ -4,12 +4,13 @@ import { useState } from "react";
 import Header from "../components/Header/Header";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Menu from '../components/Homepage/Menu';
+import UserProfile from '../components/UserProfile/UserProfile';
 
-const Community = () => {
+const Profile = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const { data: session, status } = useSession();
   return (
-    <div>
+    <div className='bg-gray-100 h-screen'>
         <Head>
         <link rel="shortcut icon" href="/lob_icon.png" />
         <title>life of brain</title>
@@ -24,10 +25,10 @@ const Community = () => {
 
 
       <main className="mx-auto">
-    
+        <UserProfile/>
       </main>
     </div>
   )
 }
 
-export default Community
+export default Profile

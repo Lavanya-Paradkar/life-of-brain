@@ -1,9 +1,11 @@
-import { ChartSquareBarIcon, CogIcon, LockClosedIcon, PencilAltIcon, UserCircleIcon, XIcon } from '@heroicons/react/outline'
+import { CogIcon, TrashIcon, UserCircleIcon, XIcon } from '@heroicons/react/outline'
 import React from 'react';
 import { useRouter } from 'next/router';
 
 const Menu = ({menuOpen, setMenuOpen, session, signIn, signOut}) => {
+
     const router = useRouter();
+
   return (
     <div className='w-auto h-auto bg-white shadow-xl rounded-xl flex flex-col fixed right-2 md:right-8 mt-0.5 z-50' onMouseLeave={()=>setMenuOpen(false)}>
         
@@ -19,14 +21,14 @@ const Menu = ({menuOpen, setMenuOpen, session, signIn, signOut}) => {
             <div className='w-full my-2 h-px bg-blue-100'></div>
 
             {/* profile */}
-            <div className='flex items-center justify-start text-md text-lob_text cursor-pointer underline hover:text-blue-400 p-1'>
+            <div className='flex items-center justify-start text-md text-lob_text cursor-pointer underline hover:text-blue-400 p-1' onClick={()=> router.push('/profile')} >
                 <UserCircleIcon className='h-7 w-7 p-1 mr-1'/>
                 My Account
             </div>
 
             {/* Notebook */}
             <div  className='flex items-center justify-start text-md text-lob_text cursor-pointer underline hover:text-blue-400 p-1'>
-                <PencilAltIcon className='h-7 w-7 p-1 mr-1'/>
+                <TrashIcon className='h-7 w-7 p-1 mr-1'/>
                 Brain Bin
             </div>
             <div className='w-full my-2 h-px bg-blue-100'></div>
