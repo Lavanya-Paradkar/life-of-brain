@@ -1,5 +1,5 @@
 import { PencilIcon, PlusIcon, UserCircleIcon, XCircleIcon, XIcon } from '@heroicons/react/outline'
-import { addDoc, collection, doc, onSnapshot, orderBy, query, serverTimestamp, updateDoc } from 'firebase/firestore';
+import { addDoc, collection, doc, getDoc, onSnapshot, orderBy, query, serverTimestamp, setDoc, updateDoc, where } from 'firebase/firestore';
 import { useSession } from 'next-auth/react'
 import React, {useState, useEffect} from 'react'
 import { db } from '../../../../firebase';
@@ -14,24 +14,34 @@ const MyProfile = () => {
     const [maritalStatus, setMaritalStatus] = useState('');
     const [mentalStatus, setMentalStatus] = useState('');
 
+    const [userData, setUserData] = useState([]);
+    const [formComplete, setFormComplete] = useState(false);
+    const [flag, setFlag] = useState(false);
+
     const handleUpdate = async () => {
-
-        const docRef = await addDoc(collection(db, 'users'), {
-            username: session.user.name,
-            email: session.user.email,
-            profileImg: session.user.image,
-            timeStamp: serverTimestamp()
-        })
-        
-        await updateDoc(doc(db, 'users', docRef.id), {
-            age: age,
-            gender: gender,
-            maritalStatus: maritalStatus,
-            mentalHealthStatus: mentalStatus
-        });
-
+        if(session) {
+            const docRef = await setDoc(doc(db, 'usersprofile', `${session.user.email}`), {
+                username: session?.user?.name,
+                email: session?.user?.email,
+                profileImg: session.user.image,
+                timeStamp: serverTimestamp(),
+                age: age,
+                gender: gender,
+                maritalStatus: maritalStatus,
+                mentalStatus: mentalStatus
+            })
+        }
         setOpenUpdate(false);
+        setFlag(!flag);
     }
+
+    useEffect(async () => {
+        if(session)
+        {
+        const docSnap = await getDoc(doc(db, 'usersprofile', `${session.user.email}`));
+        setUserData(docSnap.data());
+        }
+    }, [session, userData, flag]);
     
 
   return (
@@ -69,7 +79,7 @@ const MyProfile = () => {
                         Age:
                     </div>
                     <div className='text-md font-semibold ml-2 text-yellow-400'>
-                        {age ? age: 'Not Specified'}
+                        {userData?.age}
                     </div>
                 </div>
                 <div className='flex items-center p-1'>
@@ -77,7 +87,7 @@ const MyProfile = () => {
                         Gender:
                     </div>
                     <div className='text-md font-semibold text-yellow-400 ml-2'>
-                        {gender ? gender: 'Not Specified'}
+                        {userData?.gender}
                     </div>
                 </div>
                 <div className='flex p-1'>
@@ -85,7 +95,7 @@ const MyProfile = () => {
                         Marital Status:
                     </div>
                     <div className='text-md font-semibold text-yellow-400 ml-2'>
-                        {maritalStatus ? maritalStatus: 'Not Specified'}
+                        {userData?.maritalStatus}
                     </div>
                 </div>
                 <div className='flex p-1'>
@@ -93,7 +103,7 @@ const MyProfile = () => {
                         Mental Health Status:
                     </div>
                     <div className='text-md font-semibold text-yellow-400 ml-2'>
-                        {mentalStatus ? mentalStatus: 'Not Specified'}
+                        {userData?.mentalStatus}
                     </div>
                 </div>
                 
@@ -156,9 +166,21 @@ const MyProfile = () => {
                             </select>
                         </div>
 
-                        <div className='px-2 py-1 bg-blue-600 text-white mx-4 rounded-xl flex items-center justify-center mt-5 cursor-pointer transform hover:scale-105' onClick={handleUpdate}>
-                            Update
-                        </div>
+                        {(age === null || gender === '' || maritalStatus === '' || mentalStatus === '') ?
+                            <div className='flex flex-col items-center'>
+                                <div className='px-6 py-1 bg-gray-400 text-white mx-4 rounded-xl flex items-center justify-center mt-5 cursor-pointer' onClick={()=>setFormComplete(true)}>
+                                    Update
+                                </div>
+                                <p className='text-red-400 text-sm mt-1'>{formComplete && 'Please fill all details'}</p>
+                            </div>
+
+                        : 
+                            <div className='flex flex-col items-center'>
+                                <div className='px-6 py-1 bg-blue-600 text-white mx-4 rounded-xl flex items-center justify-center mt-5 cursor-pointer transform hover:scale-105' onClick={handleUpdate}>
+                                    Update
+                                </div>
+                            </div>
+                        }
                     </div>
                 }
         </div> 

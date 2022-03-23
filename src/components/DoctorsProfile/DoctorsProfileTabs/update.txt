@@ -1,0 +1,104 @@
+                {openUpdate && 
+                    <div className='absolute w-auto md:w-80 z-50 p-4 flex flex-col justify-center bg-white shadow-xl rounded-2xl'>
+                        
+                        <div className='absolute top-2 right-2 cursor-pointer'>
+                            <XCircleIcon className='w-6 h-6 text-yellow-600' onClick={()=>setOpenUpdate(false)}/>
+                        </div>
+                        {/* age */}
+                        <div className='flex flex-col justify-center items-center mt-2'>
+                            <div className='font-semibold mb-2 text-lob_text'>
+                                Name:
+                            </div>
+                            <input className='w-full p-2 border border-yellow-700 rounded-xl' placeholder="Name" type="text" value={Name} onChange={e => setName(e.target.value)}/>
+                        </div>
+
+                        <div className='flex flex-col justify-center items-center mt-2'>
+                            <div className='font-semibold mb-2 text-lob_text'>
+                                Age:
+                            </div>
+                            <input className='w-full p-2 border border-yellow-700 rounded-xl' placeholder="Age" type="number" value={Age} onChange={e => setAge(e.target.value)}/>
+                        </div>
+
+                        {/* sessionfee */}
+                        <div className='flex flex-col justify-center items-center mt-2'>
+                            <div className='font-semibold mb-2 text-lob_text'>
+                                Fee (per session):
+                            </div>
+                            <input className='w-full p-2 border border-yellow-700 rounded-xl' placeholder="Fee" type="number" value={Fee} onChange={e => setFee(e.target.value)}/>
+                        </div>
+
+                        {/* address */}
+                        <div className='flex flex-col justify-center items-center mt-2'>
+                            <div className='font-semibold mb-2 text-lob_text'>
+                                Country:
+                            </div>
+                            <input className='w-full p-2 border border-yellow-700 rounded-xl' placeholder="Country" type="text" value={Address} onChange={e => setAddress(e.target.value)}/>
+                        </div>
+
+                        {/* experience */}
+                        <div className='flex flex-col justify-center items-center mt-2'>
+                            <div className='font-semibold mb-2 text-lob_text'>
+                                Experience:
+                            </div>
+                            <select id='experience' className='w-full p-2 border border-yellow-700 rounded-xl' placeholder="Years of experience" value={Experience} required onChange={e => setExperience(e.target.value)}>
+                                <option className='text-gray-300'>Select</option>
+                                <option>1+ years</option>
+                                <option>2-5 years</option>
+                                <option>5+ years</option>
+                                <option>10+ years</option>
+                            </select>
+                        </div>
+
+                        {/* profession */}
+                        <div className='flex flex-col justify-center items-center mt-2'>
+                            <div className='font-semibold mb-2 text-lob_text'>
+                                Profession:
+                            </div>
+                            <select id='profession' className='w-full p-2 border border-yellow-700 rounded-xl' placeholder="Profession" required value={Profession} onChange={e => setProfession(e.target.value)}>
+                                <option className='text-gray-300'>Select</option>
+                                <option>Counselors</option>
+                                <option>Psychologists</option>
+                                <option>Both</option>
+                            </select>
+                        </div>
+
+                        {/* category */}
+                        <div className='flex flex-col justify-center items-center mt-2'>
+                            <div className='font-semibold mb-2 text-lob_text'>
+                                Category:
+                            </div>
+                            <select id='category' className='w-full p-2 border border-yellow-700 rounded-xl' placeholder="Profession" required value={Category} onChange={e => setCategory(e.target.value)}>
+                                <option className='text-gray-300'>Select</option>
+                                <optgroup label="Counselors">
+                                    <option>Mental Health Counselors</option>
+                                    <option>Marriage and Family Counselors</option>
+                                    <option>Substance Abuse Counselors</option>
+                                    <option>Rehabilitation Counselors</option>
+                                    <option>Child Abuse Counselors</option>
+                                    <option>Career Counselors</option>
+                                </optgroup>
+                                <optgroup label='Psychologists'>
+                                    <option>Clinical Neuropsychologists</option>
+                                    <option>Clinical Psychologists</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        
+                        {(Age === null || Fee === null || Profession === '' || Category === '' || Experience === null || Address === '' || Name === '') ?
+                            <div className='flex flex-col items-center'>
+                                <div className='px-6 py-1 bg-gray-400 text-white mx-4 rounded-xl flex items-center justify-center mt-5 cursor-pointer' onClick={()=>setFormComplete(true)}>
+                                    Update
+                                </div>
+                                <p className='text-red-400 text-sm mt-1'>{formComplete && 'Please fill all details'}</p>
+                            </div>
+
+                        : 
+                            <div className='flex flex-col items-center'>
+                                <div className='px-6 py-1 bg-blue-600 text-white mx-4 rounded-xl flex items-center justify-center mt-5 cursor-pointer transform hover:scale-105' onClick={handleUpdate}>
+                                    Update
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }

@@ -9,10 +9,19 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Ytb from "../components/Ytb/Ytb";
 import MobileOptions from "../components/Header/MobileOptions";
 import Menu from "../components/Homepage/Menu";
+import SignInDropDown from "../components/Header/SignInDropDown/SignInDropDown";
+
+// export async function getServerSideProps () {
+//   return {
+//     props: {}
+//   }
+// }
 
 export default function Home() {
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const [healerLogin, setHealerLogin] = useState(false);
+  const [signInDropDownOpen, setSignInDropDownOpen] = useState(false);
   const { data: session, status } = useSession();
 
   return (
@@ -23,15 +32,18 @@ export default function Home() {
       </Head>
       
       <div className="sticky top-0 bg-white z-50">
-        <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} signIn={signIn} signOut={signOut} />
+        <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} signInDropDownOpen={signInDropDownOpen} setSignInDropDownOpen={setSignInDropDownOpen} healerLogin={healerLogin}/>
       </div>
       <div className="">
+        {signInDropDownOpen && <SignInDropDown signInDropDownOpen={signInDropDownOpen} setSignInDropDownOpen={setSignInDropDownOpen} healerLogin={healerLogin} setHealerLogin={setHealerLogin} />}
         {menuOpen && <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} session={session} signIn={signIn} signOut={signOut}/>}
       </div>
 
 
       <main className="mx-auto">
+        {!healerLogin &&
         <Homepage/>
+}
         <Facts/>
         <Process/>
         <Ytb/>

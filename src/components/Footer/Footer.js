@@ -18,19 +18,22 @@ const Footer = () => {
             </div>
             <div className='flex flex-col flex-1 mr-2'>
                 <div className='font-semibold text-xl text-lob_text-peach'>
-                    Support
+                    About Us
                 </div>
                 <div className='mt-6'>
-                    <div className='font-medium mb-1 text-md cursor-pointer text-yellow-300 hover:underline hover:text-yellow-600'>
+                <div className='font-medium mb-1 text-md cursor-pointer text-yellow-400 hover:underline hover:text-yellow-600'>
+                        Our Team
+                    </div>
+                    <div className='font-medium mb-1 text-md cursor-pointer text-yellow-400 hover:underline hover:text-yellow-600'>
                         Contact Us
                     </div>
-                    <div className='font-medium mb-1 text-md cursor-pointer text-yellow-300 hover:underline hover:text-yellow-600'>
+                    <div className='font-medium mb-1 text-md cursor-pointer text-yellow-400 hover:underline hover:text-yellow-600'>
                         FAQs
                     </div>
-                    <div className='font-medium mb-1 text-md cursor-pointer text-yellow-300 hover:underline hover:text-yellow-600'>
+                    <div className='font-medium mb-1 text-md cursor-pointer text-yellow-400 hover:underline hover:text-yellow-600'>
                         Help Center
                     </div>
-                    <div className='font-medium mb-1 text-md cursor-pointer text-yellow-300 hover:underline hover:text-yellow-600'>
+                    <div className='font-medium mb-1 text-md cursor-pointer text-yellow-400 hover:underline hover:text-yellow-600'>
                         Feedback
                     </div>
                 </div>
@@ -39,10 +42,10 @@ const Footer = () => {
             </div>
             <div className='flex flex-1 flex-col'>
                 <div className='font-semibold text-xl text-lob_text-peach'>
-                    Join us
+                    Join Us
                 </div>
-                <div className='mt-6 flex flex-col md:flex-row'>
-                    <div className='mb-2 mr-4 cursor-pointer hover:shadow-xl'>
+                <div className='mt-6 grid grid-cols-3 md:flex md:flex-row'>
+                    <div className='mb-2 mr-4 cursor-pointer transform hover:scale-110'>
                         <Image
                             src="/fb_icon.png"
                             width={30}
@@ -51,7 +54,7 @@ const Footer = () => {
                             className=""
                         />
                     </div>
-                    <div className='mb-2 mr-4 cursor-pointer hover:shadow-xl'>
+                    <div className='mb-2 mr-4 cursor-pointer transform hover:scale-110'>
                         <Image
                             src="/insta_icon.png"
                             width={30}
@@ -60,7 +63,7 @@ const Footer = () => {
                             className=""
                         />
                     </div>
-                    <div className='mb-2 mr-4 cursor-pointer hover:shadow-xl'>
+                    <div className='mb-2 mr-4 cursor-pointer transform hover:scale-110'>
                         <Image
                             src="/youtube_icon.png"
                             width={30}
@@ -69,7 +72,7 @@ const Footer = () => {
                             className=""
                         />
                     </div>
-                    <div className='mb-2 mr-4 cursor-pointer hover:shadow-xl'>
+                    <div className='mb-2 mr-4 cursor-pointer transform hover:scale-110'>
                         <Image
                             src="/linkedin_icon.png"
                             width={30}
@@ -78,7 +81,7 @@ const Footer = () => {
                             className=""
                         />
                     </div>
-                    <div className='mb-2 mr-4 cursor-pointer hover:shadow-xl'>
+                    <div className='mb-2 mr-4 cursor-pointer transform hover:scale-110'>
                         <Image
                             src="/twitter_icon.png"
                             width={30}

@@ -17,9 +17,19 @@ module.exports = {
         papayalight:"#FAF7F0",
         lightblue:"#4286CF",
         wood:'#A0522D',
+        lob_green:'#3CAEA3',
+        lob_lightgreen:'#06D6A0',
+        lob_yellow:'#F6D55C',
+        navyblue: '#6194B0',
+        peachdark: '#EBA793',
+        lighterblue: '#E8F3FA',
+
       },
       spacing: {
         '128': '32rem', // standard of 128 / 4 = 32
+        '112': '28rem',
+        '144': '36rem',
+
       },
       keyframes: {
         slideUp: {
@@ -61,6 +71,7 @@ module.exports = {
           slideUp2: 'slideUp 2.9s ease forwards',
           slideUp3: 'slideUp 3.6s ease forwards',
           fadeIn: 'fadeIn 1.5s ease-out forwards',
+          fadeIn2: 'fadeIn 3s ease-out forwards',
           popUp: 'popUp 2s ease',
       }
     },

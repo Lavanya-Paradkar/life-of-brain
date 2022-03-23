@@ -2,58 +2,45 @@ import Image from "next/image";
 import {ChartSquareBarIcon, PlayIcon, UserCircleIcon, UserGroupIcon } from "@heroicons/react/outline";
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
-import { addDoc, collection, doc, serverTimestamp, updateDoc } from "firebase/firestore";
+import { addDoc, getDocs, setDoc, collection, doc, serverTimestamp, updateDoc, onSnapshot, where, orderBy, query } from "firebase/firestore";
 import { db, storage } from "../../../firebase";
 import { useSession } from "next-auth/react";
 import { getDownloadURL, ref, uploadString } from "firebase/storage";
 import { async } from "@firebase/util";
 
-const Header = ({menuOpen, setMenuOpen, signIn, signOut}) => {
+const Header = ({menuOpen, setMenuOpen, signIn, signInDropDownOpen, setSignInDropDownOpen, healerLogin}) => {
 
     const router = useRouter();
     const [loading, setLoading] = useState();
-    const {data: session} = useSession();
+    const {data: session, status} = useSession();
+    const [sample, setSample] = useState([]);
+    
+    useEffect(async () => { 
+        if(session) {
 
-    useEffect(async () => {
-
-        if (session) {
             if(loading) return;
 
             setLoading(true);
 
-            const docRef = await addDoc(collection(db, 'users'), {
-                username: session.user.name,
-                email: session.user.email,
+            const docRef = await setDoc(doc(db, 'users', `${session.user.email}`), {
+                username: session?.user?.name,
+                email: session?.user?.email,
                 profileImg: session.user.image,
                 timeStamp: serverTimestamp()
             })
+
+            const newRef = await addDoc(collection(db, 'loginEntries'), {
+                username: session?.user?.name,
+                email: session?.user?.email,
+                profileImg: session.user.image,
+                timeStamp: serverTimestamp()
+            })
+
+            setLoading(false);
         }
-    }, [session])
+    }, session, [])
     
-
-    const uploadPost = async () => {
-        if(loading) return;
-
-        setLoading(true);
-
-        const docRef = await addDoc(collection(db, 'users'), {
-            username: session.user.name,
-            email: session.user.email,
-            profileImg: session.user.image,
-            timeStamp: serverTimestamp()
-        })
-        
-        // const imageRef = ref(storage, `users/${docRef.id}/image`);
-
-        // await uploadString(imageRef, '/fb_icon.png', "data_url").then(async snapshot => {
-        //     const downloadUrl = await getDownloadURL(imageRef);
-        //     await updateDoc(doc(db, 'users', docRef.id), {
-        //         image: downloadUrl
-        //     })
-        // });
-
-        setLoading(false);
-    }
+    
 
   return (
     <header>
@@ -118,8 +105,8 @@ const Header = ({menuOpen, setMenuOpen, signIn, signOut}) => {
                     </div>
                 </div>
                 {/* SignIn */}
-                <div onClick={!session ? signIn : ()=>setMenuOpen(!menuOpen)} className={!session ? "flex bg-blue-500 text-md md:text-lg text-white px-3 w-auto mx-1 md:mx-4 py-1 justify-center items-center font-semibold rounded-lg hover:bg-blue-600 cursor-pointer"  :   "flex text-lg w-auto mx-1 md:mx-4 justify-center items-center font-semibold rounded-full text-lob_text cursor-pointer"}>
-                    {session &&
+                <div onClick={!session ? ()=>setSignInDropDownOpen(!signInDropDownOpen) : ()=>setMenuOpen(!menuOpen)} className={!session ? "flex bg-blue-500 text-md md:text-lg text-white px-3 w-auto mx-1 md:mx-4 py-1 justify-center items-center font-semibold rounded-lg hover:bg-blue-600 cursor-pointer"  :   "flex text-lg w-auto mx-1 md:mx-4 justify-center items-center font-semibold rounded-full text-lob_text cursor-pointer"}>
+                    {status === 'authenticated' &&
                     <div className="flex rounded-full items-center text-lob_text">
                         {!session?.user?.image ? <UserCircleIcon className="w-8 h-8 font-extralight"/> : 
                         <img
@@ -128,11 +115,10 @@ const Header = ({menuOpen, setMenuOpen, signIn, signOut}) => {
                             height={40}
                             className='rounded-full'
                         /> }
-                        {/* {session && loading && <div className="text-lg bg-red-500 text-white rounded-lg p-3">Uploading...</div>} */}
                     </div>
                     }
                     <p>
-                        {session ? ``: `Sign In`}
+                        {status === 'authenticated' ? ``: (status === 'loading' ? `Loading...` : `Sign In`)}
                     </p>
                 </div>
             </div>
