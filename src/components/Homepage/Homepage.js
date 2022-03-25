@@ -7,10 +7,10 @@ const Homepage = () => {
   return (
     <div>
         <div className='hidden md:block relative z-0'>
-            <img src='/homebanner_la.webp' width='100%' height='100%'/>
+            <img src='/homebanner_la.webp' width='100%' height='100%' loading='eager'/>
         </div>
         <div className='md:hidden relative z-0'>
-            <img src='/stressp2.webp' width='100%' height='100%'/>
+            <img src='/stressp2.webp' width='100%' height='100%' loading='eager'/>
         </div>
 
         <div className='flex flex-col absolute -mt-144 md:-mt-80 lg:-mt-112 pl-1 lg:pl-12 z-10 animate-fadeIn2'>

@@ -106,6 +106,8 @@ const DoctorsLoginPage = ({ success, setSuccess, oldUser, setOldUser }) => {
                         onChange={addImageToPost}
                         required
                     />
+                    {/* incomplete */}
+                    <p className='mt-2 text-red-400'>{selectedFile === null && formComplete && '* Please upload photo'}</p>
                 </div>
             )}
             
@@ -118,11 +120,15 @@ const DoctorsLoginPage = ({ success, setSuccess, oldUser, setOldUser }) => {
                     <div className='flex flex-col items-start mt-4'>
                         <label className='text-blue-600 text-lg font-semibold'>Name</label>
                         <input className='border rounded-xl w-72 p-2 focus:outline-none mt-1 border-blue-400' type='text' placeholder='Enter your name' value={name} required onChange={e => setName(e.target.value)}/>
+                        {/* incomplete */}
+                        <p className='mt-1 text-red-400'>{name === '' && formComplete && '* Please add your name'}</p>
                     </div>
                     {/* email */}
                     <div className='flex flex-col items-start mt-4'>
                         <label className='text-blue-600 text-lg font-semibold'>Email</label>
                         <input className='border rounded-xl w-72 p-2 mt-1 focus:outline-none border-blue-400' type='email' placeholder='Enter your email' value={email} required onChange={e => setEmail(e.target.value)}/>
+                        {/* incomplete */}
+                        <p className='mt-1 text-red-400'>{email === '' && formComplete && '* Please add your email'}</p>
                     </div>
                     {/* password */}
                     <div className='flex flex-col items-start mt-4'>
@@ -136,18 +142,21 @@ const DoctorsLoginPage = ({ success, setSuccess, oldUser, setOldUser }) => {
                                 }
                             </div>
                         </div>
-                        
+                        {/* incomplete */}
+                        <p className='mt-1 text-red-400'>{password === '' && formComplete && '* Please add password'}</p>
                     </div>
                     {/* age */}
                     <div className='flex flex-col items-start mt-4'>
                         <label className='text-blue-600 text-lg font-semibold'>Age</label>
                         <input className='border rounded-xl w-72 p-2 mt-1 focus:outline-none border-blue-400' type='number' min={10} placeholder='Enter your age' required value={age} onChange={e => setAge(e.target.value)}/>
+                        {/* incomplete */}
+                        <p className='mt-1 text-red-400'>{age === null && formComplete && '* Please add your age'}</p>
                     </div>
                     {/* gender */}
                     <div className='flex flex-col items-start mt-4'>
                         <label className='text-blue-600 text-lg font-semibold'>Gender</label>
                         <select id='gender' className='w-72 p-2 border focus:outline-none border-blue-400 mt-1 rounded-xl overflow-auto' placeholder="Gender" value={gender} required onChange={e => setGender(e.target.value)}>
-                            <option className='text-gray-300'>Select</option>
+                            <option>Select</option>
                             <option>She/her</option>
                             <option>He/him</option>
                             <option>They/them</option>
@@ -155,6 +164,8 @@ const DoctorsLoginPage = ({ success, setSuccess, oldUser, setOldUser }) => {
                             <option>I prefer not to say</option>
                         </select>
                     </div>
+                    {/* incomplete */}
+                    <p className='mt-1 text-red-400'>{gender === '' && formComplete && '* Please select your gender'}</p>
                 </div>
                 
 
@@ -164,7 +175,7 @@ const DoctorsLoginPage = ({ success, setSuccess, oldUser, setOldUser }) => {
                     <div className='flex flex-col items-start mt-4'>
                         <label className='text-blue-600 text-lg font-semibold'>Country</label>
                         <select id='country' className='w-72 p-2 border focus:outline-none border-blue-400 mt-1 rounded-xl overflow-auto' placeholder="Select your Country" value={address} required onChange={e => setAddress(e.target.value)}>
-                            <option className='text-gray-300'>Select</option>
+                            <option>Select</option>
                             <option>Australia</option>
                             <option>Canada</option>
                             <option>France</option>
@@ -177,24 +188,31 @@ const DoctorsLoginPage = ({ success, setSuccess, oldUser, setOldUser }) => {
                             <option>United States</option>
                             
                         </select>
+
+                        {/* incomplete */}
+                        <p className='mt-1 text-red-400'>{address === '' && formComplete && '* Please select your country'}</p>
                     </div>
+
                     {/* years of experience */}
                     <div className='flex flex-col items-start mt-4'>
                         <label className='text-blue-600 text-lg font-semibold'>Years of Experience</label>
                         <select id='experience' className='w-72 p-2 border focus:outline-none border-blue-400 mt-1 rounded-xl overflow-auto' placeholder="Years of experience" value={experience} required onChange={e => setExperience(e.target.value)}>
-                            <option className='text-gray-300'>Select</option>
+                            <option>Select</option>
                             <option>1+ years</option>
                             <option>2-5 years</option>
                             <option>5+ years</option>
                             <option>10+ years</option>
                         </select>
+                        {/* incomplete */}
+                        <p className='mt-1 text-red-400'>{experience === null && formComplete && '* Please select your experience'}</p>
                     </div>
+
                     {/* Fee per session  */}
                     <div className='flex flex-col items-start mt-4'>
                         <label className='text-blue-600 text-lg font-semibold'>Fee ( per session )</label>
                         <div className='relative flex items-center border rounded-xl w-72 p-2 mt-1 border-blue-400'>
                         <select id='experience' className='absolute flex items-center focus:outline-none left-0 ml-1 w-24 border-r border-blue-400 rounded=r-xl overflow-auto' placeholder="Currency" value={currency} required onChange={e => setCurrency(e.target.value)}>
-                            <option className='text-gray-300'>Currency</option>
+                            <option>Currency</option>
                             <option>$ (USD)</option>
                             <option>A$ (AUD)</option>
                             <option>C$ (CAD)</option>
@@ -207,25 +225,32 @@ const DoctorsLoginPage = ({ success, setSuccess, oldUser, setOldUser }) => {
 
                         </select>
                         <input className='border-none focus:outline-none ml-28' type='number' min={100} max={1000000000} placeholder='Fee per session' required value={fee} onChange={e => setFee(e.target.value)}/>
-
+                        
                         </div>
+
+                        {/* incomplete */}
+                        <p className='mt-1 text-red-400'>{(currency === '' || fee === null) && formComplete && '* Please select currency and fee'}</p>
                     </div>
+
                     {/* profession */}
                     <div className='flex flex-col items-start mt-4'>
                         <label className='text-blue-600 text-lg font-semibold'>Profession</label>
                         <select id='profession' className='w-72 p-2 border focus:outline-none border-blue-400 mt-1 rounded-xl overflow-auto' placeholder="Profession" required value={profession} onChange={e => setProfession(e.target.value)}>
-                            <option className='text-gray-300'>Select</option>
+                            <option>Select</option>
                             <option>Counselors</option>
                             <option>Psychologists</option>
                         </select>
+
+                        {/* incomplete */}
+                        <p className='mt-1 text-red-400'>{profession === '' && formComplete && '* Please select your profession'}</p>
                     </div>
                     {/* category */}
                     <div className='flex flex-col items-start mt-4'>
-                        <label className='text-blue-600 text-lg font-semibold'>Category</label>
+                        <label className='text-blue-600 text-lg font-semibold'>Domain</label>
                         <select id='category' className='w-72 p-2 border focus:outline-none border-blue-400 mt-1 rounded-xl overflow-auto' placeholder="Profession" required value={category} onChange={e => setCategory(e.target.value)}>
                             {profession === 'Counselors' &&
                                 <optgroup>
-                                    <option className='text-gray-300'>Select</option>
+                                    <option>Select</option>
                                     <option>Mental Health Counselors</option>
                                     <option>Marriage and Family Counselors</option>
                                     <option>Substance Abuse Counselors</option>
@@ -236,7 +261,7 @@ const DoctorsLoginPage = ({ success, setSuccess, oldUser, setOldUser }) => {
                             }
                             {profession === 'Psychologists' &&
                                 <optgroup>
-                                    <option className='text-gray-300'>Select</option>
+                                    <option>Select</option>
                                     <option>Clinical Neuropsychologists</option>
                                     <option>Clinical Psychologists</option>
                                 </optgroup>
@@ -247,15 +272,18 @@ const DoctorsLoginPage = ({ success, setSuccess, oldUser, setOldUser }) => {
                                 </optgroup>
                             }
                         </select>
+
+                        {/* incomplete */}
+                        <p className='mt-1 text-red-400'>{category === '' && formComplete && '* Please select category'}</p>
                     </div>
                 </div>
             </div>
         </div>
         
         {
-            (name === '' || experience === null || email === '' || gender === '' || fee === null || profession === '' || category === '' || address === '' || selectedFile === null || currency === '') ? (
+            (name === '' || experience === null || email === '' || gender === '' || fee === null || profession === '' || category === '' || address === '' || selectedFile === null || currency === '' || password === '' || age === null) ? (
                 <div onClick={() => setFormComplete(true)} className='flex flex-col items-center justify-center mt-10 mb-20 md:mb-0'>
-                    <p className='mb-1 text-red-400'>{formComplete && 'Please upload photo and fill all the details'}</p>
+                    <p className='mb-1 text-red-400'>{formComplete && 'We request you to fill all the details'}</p>
                     <div className='flex items-center'>
                         <p className='bg-green-500 font-semibold text-lg py-2 px-4 text-white shadow-2xl rounded-xl cursor-pointer transform hover:scale-105'>
                             Register

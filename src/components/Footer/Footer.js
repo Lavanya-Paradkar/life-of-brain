@@ -1,9 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 const Footer = () => {
   var currentTime = new Date()
   var currentyear = currentTime.getFullYear()
+
+  const router = useRouter();
   return (
     <div className='flex flex-col'>
         <div className='bg-white p-16 flex'>
@@ -21,19 +24,16 @@ const Footer = () => {
                     About Us
                 </div>
                 <div className='mt-6'>
-                <div className='font-medium mb-1 text-md cursor-pointer text-yellow-400 hover:underline hover:text-yellow-600'>
+                <div onClick={() => router.push('/ourteam')} className='font-medium mb-1 text-md cursor-pointer text-yellow-400 hover:underline hover:text-yellow-600'>
                         Our Team
                     </div>
                     <div className='font-medium mb-1 text-md cursor-pointer text-yellow-400 hover:underline hover:text-yellow-600'>
-                        Contact Us
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=info.lifeofbrain@gmail.com">Contact Us</a>
                     </div>
                     <div className='font-medium mb-1 text-md cursor-pointer text-yellow-400 hover:underline hover:text-yellow-600'>
-                        FAQs
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=info.lifeofbrain@gmail.com">Help Center</a>
                     </div>
-                    <div className='font-medium mb-1 text-md cursor-pointer text-yellow-400 hover:underline hover:text-yellow-600'>
-                        Help Center
-                    </div>
-                    <div className='font-medium mb-1 text-md cursor-pointer text-yellow-400 hover:underline hover:text-yellow-600'>
+                    <div onClick={() => router.push('https://forms.gle/NhA6DaLxUXJkkCH56')} className='font-medium mb-1 text-md cursor-pointer text-yellow-400 hover:underline hover:text-yellow-600'>
                         Feedback
                     </div>
                 </div>
@@ -44,8 +44,10 @@ const Footer = () => {
                 <div className='font-semibold text-xl text-lob_text-peach'>
                     Join Us
                 </div>
+                
                 <div className='mt-6 grid grid-cols-3 md:flex md:flex-row'>
-                    <div className='mb-2 mr-4 cursor-pointer transform hover:scale-110'>
+                    {/* fb */}
+                    <div onClick={()=> router.push('https://www.facebook.com/Life-Of-Brain-105582952106029')} className='mb-2 mr-4 cursor-pointer transform hover:scale-110'>
                         <Image
                             src="/fb_icon.png"
                             width={30}
@@ -54,7 +56,8 @@ const Footer = () => {
                             className=""
                         />
                     </div>
-                    <div className='mb-2 mr-4 cursor-pointer transform hover:scale-110'>
+                    {/* insta */}
+                    <div onClick={()=> router.push('https://www.instagram.com/lifeofbrain.official/')} className='mb-2 mr-4 cursor-pointer transform hover:scale-110'>
                         <Image
                             src="/insta_icon.png"
                             width={30}
@@ -63,7 +66,8 @@ const Footer = () => {
                             className=""
                         />
                     </div>
-                    <div className='mb-2 mr-4 cursor-pointer transform hover:scale-110'>
+                    {/* ytb */}
+                    <div onClick={()=> router.push('https://www.youtube.com/channel/UCBxMp9UHmIW0fa4igpSUuXw')} className='mb-2 mr-4 cursor-pointer transform hover:scale-110'>
                         <Image
                             src="/youtube_icon.png"
                             width={30}
@@ -72,6 +76,8 @@ const Footer = () => {
                             className=""
                         />
                     </div>
+                    
+                    {/*                     
                     <div className='mb-2 mr-4 cursor-pointer transform hover:scale-110'>
                         <Image
                             src="/linkedin_icon.png"
@@ -81,6 +87,7 @@ const Footer = () => {
                             className=""
                         />
                     </div>
+            
                     <div className='mb-2 mr-4 cursor-pointer transform hover:scale-110'>
                         <Image
                             src="/twitter_icon.png"
@@ -89,7 +96,7 @@ const Footer = () => {
                             objectFit="contain"
                             className=""
                         />
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

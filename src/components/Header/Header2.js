@@ -29,24 +29,18 @@ const Header2 = ({newHealer, setMenuOpen, signIn, signInDropDownOpen, setSignInD
             <div className="flex items-center">
                 
                 {newHealer === 1 &&
-                    <div className="flex flex-col items-center text-lob_text font-semibold px-6 cursor-pointer">
-                        <div onClick={()=> router.push('/healerlogin')} className='flex items-center text-sm md:text-lg ml-16 cursor-pointer underline text-lob_text hover:text-blue-500'>
-                            Sign Up
-                        </div>
+                    <div>
                     </div>
                 }
                 {newHealer === 0 &&
                     <div className="flex flex-col items-center text-lob_text font-semibold px-6 cursor-pointer">
-                        <div onClick={()=> router.push('/healerprofile')} className='flex items-center text-xs md:text-lg ml-16 cursor-pointer underline text-lob_text hover:text-blue-500'>
-                            Already Registered?
+                        <div onClick={()=> router.push('/healerprofile')} className='flex items-center text-lg px-2 py-1 w-20 justify-center rounded-lg ml-16 cursor-pointer  text-white bg-peachdark hover:bg-lob_text'>
+                            Sign In
                         </div>
                     </div>
                 }
                 {newHealer === 2 &&
-                    <div className="flex flex-col items-center text-lob_text font-semibold px-6 cursor-pointer">
-                        <div className='flex items-center text-xs md:text-lg ml-16 cursor-pointer underline text-lob_text hover:text-blue-500'>
-                            
-                        </div>
+                    <div>
                     </div>
                 }
             </div>

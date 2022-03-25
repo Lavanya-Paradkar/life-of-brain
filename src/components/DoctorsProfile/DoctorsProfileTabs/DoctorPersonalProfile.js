@@ -163,7 +163,7 @@ const DoctorPersonalProfile = ({
                             </div>
                             <div className='relative flex items-center border rounded-xl w-full p-2 border-yellow-700'>
                                 <select id='experience' className='absolute flex items-center focus:outline-none left-0 ml-1 w-24 border-r border-yellow-700 rounded=r-xl overflow-auto' placeholder="Currency" value={Currency} required onChange={e => setCurrency(e.target.value)}>
-                                    <option className='text-gray-300'>Currency</option>
+                                    <option>Currency</option>
                                     <option>$ (USD)</option>
                                     <option>A$ (AUD)</option>
                                     <option>C$ (CAD)</option>
@@ -186,7 +186,7 @@ const DoctorPersonalProfile = ({
                                 Country:
                             </div>
                             <select id='country' className='w-full p-2 border focus:outline-none border-yellow-700 rounded-xl overflow-auto' placeholder="Select your Country" value={Address} required onChange={e => setAddress(e.target.value)}>
-                                <option className='text-gray-300'>Select</option>
+                                <option>Select</option>
                                 <option>Australia</option>
                                 <option>Canada</option>
                                 <option>France</option>
@@ -207,7 +207,7 @@ const DoctorPersonalProfile = ({
                                 Experience:
                             </div>
                             <select id='experience' className='w-full p-2 border border-yellow-700 rounded-xl' placeholder="Years of experience" value={Experience} required onChange={e => setExperience(e.target.value)}>
-                                <option className='text-gray-300'>Select</option>
+                                <option>Select</option>
                                 <option>1+ years</option>
                                 <option>2-5 years</option>
                                 <option>5+ years</option>
@@ -221,7 +221,7 @@ const DoctorPersonalProfile = ({
                                 Profession:
                             </div>
                             <select id='profession' className='w-full p-2 border border-yellow-700 rounded-xl' placeholder="Profession" required value={Profession} onChange={e => setProfession(e.target.value)}>
-                                <option className='text-gray-300'>Select</option>
+                                <option>Select</option>
                                 <option>Counselors</option>
                                 <option>Psychologists</option>
                             </select>
@@ -235,7 +235,7 @@ const DoctorPersonalProfile = ({
                             <select id='category' className='w-full p-2 border border-yellow-700 rounded-xl' placeholder="Profession" required value={Category} onChange={e => setCategory(e.target.value)}>
                                 {Profession === 'Counselors' &&
                                     <optgroup>
-                                        <option className='text-gray-300'>Select</option>
+                                        <option>Select</option>
                                         <option>Mental Health Counselors</option>
                                         <option>Marriage and Family Counselors</option>
                                         <option>Substance Abuse Counselors</option>
@@ -246,7 +246,7 @@ const DoctorPersonalProfile = ({
                                 }
                                 {Profession === 'Psychologists' &&
                                     <optgroup>
-                                        <option className='text-gray-300'>Select</option>
+                                        <option>Select</option>
                                         <option>Clinical Neuropsychologists</option>
                                         <option>Clinical Psychologists</option>
                                     </optgroup>
