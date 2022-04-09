@@ -12,14 +12,14 @@ export const basketSlice = createSlice({
       state.items = [...state.items, action.payload]
     },
     removeFromBasket: (state, action) => {
-      const index = state.items.findIndex(basketItem => basketItem.name === action.payload.name);
+      const index = state.items.findIndex(basketItem => basketItem.email === action.payload.email);
 
       let newBasket = [...state.items];
 
       if(index >= 0){
         newBasket.splice(index, 1)
       } else {
-        console.warn('Product not found in list');
+        console.warn('Healer not found');
       }
 
       state.items = newBasket;

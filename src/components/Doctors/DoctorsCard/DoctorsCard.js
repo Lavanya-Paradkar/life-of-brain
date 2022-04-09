@@ -88,8 +88,8 @@ const DoctorCard = ({
           <p className='text-xs'>{experience} exp.</p>
         </div>
         {/* btn */}
-        <div onClick={addItemToBasket} className='bg-green-500 mt-4 flex items-center justify-center text-sm font-semibold text-white px-3 py-1 rounded-lg cursor-pointer transform hover:scale-105'>
-            <div>Connect</div>
+        <div onClick={() => router.push('/slot')} className='bg-green-500 mt-4 flex items-center justify-center text-sm font-semibold text-white px-3 py-1 rounded-lg cursor-pointer transform hover:scale-105'>
+            <div  onClick={addItemToBasket}>Connect</div>
         </div>
       </div>
     </div>

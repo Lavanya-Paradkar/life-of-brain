@@ -46,6 +46,7 @@ const Doct = () => {
       const allCounselors = await onSnapshot(query(collection(db, 'doctors'), where("profession", "==", "Counselors"), where("address", "==", `${selectedCountry}`)), (snapshot) => {
         setDoctorData(snapshot.docs);
       });
+      setLoading(false);
       return allCounselors;
     }
 
@@ -123,7 +124,7 @@ const Doct = () => {
 
 
     {/* cards */}
-      {doctorData.length > 0 ? (
+      {doctorData.length > 0 && !loading ? (
         <div className='p-4 grid grid-flow-row-dense grid-cols-1 md:grid-cols-2 w-full md:w-auto lg:grid-cols-3 xl:grid-cols-4'>
           
           {doctorData.map(doctor => (
