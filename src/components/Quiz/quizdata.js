@@ -461,4 +461,224 @@ export const quizData = [
           },
         ],
       },
+      {
+        id: 11,
+        question: "How dependent are you on Alcohol/Caffeine?",
+        answers: [
+          {
+            text: "I do not consume alcohol",
+            value: 0,
+          },
+          {
+            text: "I consume caffeine, but not alcohol",
+            value: 1,
+          },
+          {
+            text: "I consume alcohol sometimes",
+            value: 2,
+          },
+          {
+            text: "I consume alcohol daily",
+            value: 3,
+          },
+        ],
+      },
+      {
+        id: 12,
+        question: "How satisfied are you with your working hours?",
+        answers: [
+          {
+            text: "I am happy with my working hours",
+            value: 0,
+          },
+          {
+            text: "I feel exhausted sometimes",
+            value: 1,
+          },
+          {
+            text: "I feel exhausted often",
+            value: 2,
+          },
+          {
+            text: "I want to quit my job",
+            value: 3,
+          },
+        ],
+      },
+      {
+        id: 13,
+        question: "Are you concerned with your income/savings?",
+        answers: [
+          {
+            text: "I am not earning currently",
+            value: 0,
+          },
+          {
+            text: "I am happy with my income",
+            value: 1,
+          },
+          {
+            text: "I think I deserve more than what I earn",
+            value: 2,
+          },
+          {
+            text: "I constantly think of my income",
+            value: 3,
+          },
+        ],
+      },
+      {
+        id: 14,
+        question: "Do you feel overwhelmed in the presence of a larger number of people?",
+        answers: [
+          {
+            text: "I am totally fine",
+            value: 0,
+          },
+          {
+            text: "I feel little nervous with strangers",
+            value: 1,
+          },
+          {
+            text: "I get nervous even when talking to family members",
+            value: 2,
+          },
+          {
+            text: "I avoid gatherings",
+            value: 3,
+          },
+        ],
+      },
+      {
+        id: 15,
+        question: "Do medical expenses trouble you?",
+        answers: [
+          {
+            text: "I consider them important",
+            value: 0,
+          },
+          {
+            text: "I am little hesitant while spending on medicines",
+            value: 1,
+          },
+          {
+            text: "I consider medical expenses worthless",
+            value: 2,
+          },
+          {
+            text: "I am not concerned about medical expenses",
+            value: 3,
+          },
+        ],
+      },
+      {
+        id: 16,
+        question: "Do you consult health experts?",
+        answers: [
+          {
+            text: "I visit health experts only when ill",
+            value: 0,
+          },
+          {
+            text: "I go for regular health check up every month",
+            value: 1,
+          },
+          {
+            text: "I never visit health experts",
+            value: 2,
+          },
+          {
+            text: "I visit health experts quite often",
+            value: 3,
+          },
+        ],
+      },
+      {
+        id: 17,
+        question: "Do you get irritated when in traffic/long queue?",
+        answers: [
+          {
+            text: "I accept the reality",
+            value: 0,
+          },
+          {
+            text: "I sometimes get irritated",
+            value: 1,
+          },
+          {
+            text: "I often get irritated",
+            value: 2,
+          },
+          {
+            text: "I get very angry and start complaining",
+            value: 3,
+          },
+        ],
+      },
+      {
+        id: 18,
+        question: "Do minor injuries affect you?",
+        answers: [
+          {
+            text: "I do not panic",
+            value: 0,
+          },
+          {
+            text: "I start worrying for my family members get hurt",
+            value: 1,
+          },
+          {
+            text: "I get worried when I get hurt",
+            value: 2,
+          },
+          {
+            text: "I fear if the injury would get worse",
+            value: 3,
+          },
+        ],
+      },
+      {
+        id: 19,
+        question: "Do you feel overwhelmed in the presence of a larger number of people?",
+        answers: [
+          {
+            text: "I am totally fine",
+            value: 0,
+          },
+          {
+            text: "I feel little nervous with strangers",
+            value: 1,
+          },
+          {
+            text: "I get nervous even when talking to family members",
+            value: 2,
+          },
+          {
+            text: "I avoid gatherings",
+            value: 3,
+          },
+        ],
+      },
+      {
+        id: 20,
+        question: "What is your age?",
+        answers: [
+          {
+            text: "50+ years old",
+            value: 0,
+          },
+          {
+            text: "10-17 years old",
+            value: 1,
+          },
+          {
+            text: "18-30 years old",
+            value: 3,
+          },
+          {
+            text: "30-50 years old",
+            value: 2,
+          },
+        ],
+      },
   ];

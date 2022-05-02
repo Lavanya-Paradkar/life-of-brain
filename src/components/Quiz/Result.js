@@ -7,21 +7,21 @@ const Result = ({result, restart, router}) => {
                 {/* score */}
                 <div className=' flex text-3xl font-bold mb-4'>
                     Your mental health status is : <div 
-                        className={result > 22 ? 'text-red-800 text-3xl font-bold ml-4': 
-                        (result > 15 ? 'text-red-600 text-3xl font-bold ml-4':(
-                            result > 10 ? 'text-yellow-800 text-3xl font-bold ml-4': (
-                                result > 8 ? 'text-yellow-600 text-3xl font-bold ml-4': (
-                                    result > 5 ? 'text-yellow-400 text-3xl font-bold ml-4': (
+                        className={result > 44 ? 'text-red-800 text-3xl font-bold ml-4': 
+                        (result > 30 ? 'text-red-600 text-3xl font-bold ml-4':(
+                            result > 20 ? 'text-yellow-800 text-3xl font-bold ml-4': (
+                                result > 16 ? 'text-yellow-600 text-3xl font-bold ml-4': (
+                                    result > 10 ? 'text-yellow-400 text-3xl font-bold ml-4': (
                                         result >= 0 && 'text-green-600 text-3xl font-bold ml-4'
                                     )
                                 )
                             )
-                        ))}>{(100 - result*1.999).toFixed(2)}% </div>
+                        ))}>{(((100 - result*0.999).toFixed(2)) - Math.random()*3).toFixed(2)}% </div>
                 </div>
                 {/* suggestions */}
                 <div className='w-auto lg:w-128'>
                     {
-                        result > 22 && 
+                        result > 44 && 
                         <div className='flex flex-col items-center'>
                             <div className='flex items-center font-bold text-2xl text-white rounded-2xl px-4 py-2  bg-red-800 my-1'>
                                 Extreme Depression
@@ -33,7 +33,7 @@ const Result = ({result, restart, router}) => {
                         </div>
                     }
                     {
-                        result > 15 && result <= 22 && 
+                        result > 30 && result <= 44 && 
                         <div className='flex flex-col items-center'>
                             <div className='flex items-center font-bold text-2xl text-white rounded-2xl px-4 py-2  bg-red-600 my-1'>
                                 Severe Depression
@@ -46,7 +46,7 @@ const Result = ({result, restart, router}) => {
 
                     }
                     {
-                        result > 10 && result <= 15 && 
+                        result > 20 && result <= 30 && 
                         <div className='flex flex-col items-center'>
                             <div className='flex items-center font-bold text-2xl text-white rounded-2xl px-4 py-2  bg-yellow-800 my-1'>
                                 Moderate Depression
@@ -58,7 +58,7 @@ const Result = ({result, restart, router}) => {
                             </div>
                     }
                     {
-                        result > 8 && result <= 10 && 
+                        result > 16 && result <= 20 && 
                         <div className='flex flex-col items-center'>
                             <div className='flex items-center font-bold text-2xl text-white rounded-2xl px-4 py-2  bg-yellow-600 my-1'>
                                 Borderline Clinical Depression
@@ -70,7 +70,7 @@ const Result = ({result, restart, router}) => {
                             </div>
                     }
                     {
-                        result > 5 && result <= 8 && 
+                        result > 10 && result <= 16 && 
                         <div className='flex flex-col items-center'>
                             <div className='flex items-center font-bold text-2xl text-white rounded-2xl px-4 py-2  bg-yellow-400 my-1'>
                                 Mild Mood Disturbances
@@ -82,7 +82,7 @@ const Result = ({result, restart, router}) => {
                         </div>
                     }
                     {
-                        result >= 0 && result <= 5 && 
+                        result >= 0 && result <= 10 && 
                         <div className='flex flex-col items-center'>
                             <div className='flex items-center font-bold text-2xl text-white rounded-2xl px-4 py-2  bg-green-600 my-1'>
                                 Normal 
@@ -95,7 +95,7 @@ const Result = ({result, restart, router}) => {
                 </div>
                 {/* buttons */}
                 <div className='flex mt-3'>
-                    {result > 8 &&
+                    {result > 16 &&
                         <div onClick={()=> router.push('/doctors')} className='flex items-center mx-2 mt-4 px-6 py-2 bg-red-400 rounded-full cursor-pointer text-white hover:bg-green-500'>
                             <p className='flex font-semibold items-center justify-center'>Feel Better</p>
                         </div>
